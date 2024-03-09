@@ -202,6 +202,12 @@ const typeDefs = gql`
     eng_sign: String
   }
 
+  type Notification {
+    comment: String
+    provider: String
+    consumer: String
+  }
+
   type SubmitExpenseResponse {
     call_id: String
     message: String
@@ -478,6 +484,8 @@ const typeDefs = gql`
     callsByEng(eng_emp: String!, status: CallStatus!): EngineerCall
     callsByDate(date: String): [Call]
     getAttendenceByEng(eng_emp: String!): GetAttendenceResponse
+    getEngNotification(eng_emp: String!): [Notification]
+    getAdminNotification(eng_emp: String!): [Notification]
     # getQRCode: String
   }
 
