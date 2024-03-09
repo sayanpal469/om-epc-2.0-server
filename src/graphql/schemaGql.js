@@ -202,12 +202,6 @@ const typeDefs = gql`
     eng_sign: String
   }
 
-  type Notification {
-    comment: String
-    provider: String
-    consumer: String
-  }
-
   type SubmitExpenseResponse {
     call_id: String
     message: String
@@ -251,6 +245,12 @@ const typeDefs = gql`
     eng_emp: String
     eng_name: String
     expense_list: [ExpenseDetails]
+  }
+
+  type Notification {
+    comment: String
+    provider: String
+    consumer: String
   }
 
   input ExpenseReportInput {
@@ -460,6 +460,7 @@ const typeDefs = gql`
   }
 
   scalar SuccessMessage
+  
 
   type Query {
     users: [User]
